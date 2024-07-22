@@ -1,92 +1,52 @@
-/* Additional CSS for food items */
 body {
-  padding:0% ;
-  margin:0%;
+  background-color: #f8f9fa;
 }
 
-.navbar {
-  background-color: #343a40 !important;
-}
-
-.container {
-  margin-top: 20px;
-}
-
-#searchForm {
-  margin-left: auto;
-}
-
-.food-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
+.card {
+  border: none;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.food-item img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-right: 20px;
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.food-item .food-details {
-  flex-grow: 1;
+.card-body {
+  padding: 15px;
 }
 
-.food-item .food-details h5 {
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-}
-
-.food-item .food-details p {
-  margin: 0;
-}
-
-.food-item .food-details .food-price,
-.food-item .food-details .food-rating {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.food-item .food-actions {
+.form-inline {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.food-item .food-actions .btn {
-  margin-left: 10px;
+.form-control {
+  margin: 5px;
 }
 
-.cart-item {
+#foodContainer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#search-input, #city-filter {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
-.cart-item img {
-  max-width: 100px;
-  margin-right: 1rem;
+
+.food-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
-.cart-item-details {
-  flex-grow: 1;
-}
-.cart-item-actions {
-  display: flex;
-  align-items: center;
-}
-.cart-item-actions button {
-  margin: 0 0.5rem;
-}
-.cart-total {
-  font-size: 1.5rem;
-  text-align: right;
-  margin-top: 1rem;
+
+.food-item img {
+  max-width: 100%;
+  height: auto;
 }

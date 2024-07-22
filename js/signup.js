@@ -1,6 +1,6 @@
-import { navbar } from '/components/navbar.js';
-import { createUser } from '/api/user.api.js';
-document.getElementById('navbar').innerHTML = navbar();
+import { navbar } from '../components/navbar.js';
+import { createUser } from '../api/user.api.js';
+document.getElementById('navbar').innerHTML=navbar();
 document.getElementById('signupForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -12,6 +12,11 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
     city: document.getElementById('city').value
   };
 
-  await createUser(user);
-  window.location.href = '/pages/login.html';
+  const result = await createUser(user);
+  if (result) {
+    alert('Signup successful!');
+    window.location.href = '/pages/login.html';
+  } else {
+    alert('Signup failed. Please try again.');
+  }
 });

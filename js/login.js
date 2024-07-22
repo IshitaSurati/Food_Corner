@@ -1,19 +1,17 @@
-import { navbar } from '/components/navbar.js';
-import { getUserByEmail } from '/api/user.api.js';
-document.getElementById('navbar').innerHTML = navbar();
-
-
+import { navbar } from '../components/navbar.js';
+import { loginUser } from '../api/user.api.js';
+document.getElementById('navbar').innerHTML=navbar();
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-  const users = await getUserByEmail(email);
-
-  if (users.length && users[0].password === password) {
-    window.location.href = '/index.html';
+  const user = await loginUser(email, password);
+  if (user) {
+    alert('Login successful!');
+    window.location.href = '/';
   } else {
-    alert('Invalid email or password');
+    alert('Invalid email or password.');
   }
 });

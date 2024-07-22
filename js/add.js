@@ -1,16 +1,35 @@
-import { navbar } from '/components/navbar.js';
-import { addFood } from '../api/food.api.js';
-document.getElementById('navbar').innerHTML = navbar();
-document.getElementById('addFoodForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
+import { addFoodItem } from '../api/food.api.js';
+import { navbar } from '../components/navbar.js';
 
-  const food = {
-    title: document.getElementById('foodTitle').value,
-    description: document.getElementById('foodDescription').value,
-    price: parseFloat(document.getElementById('foodPrice').value),
-    city: document.getElementById('foodCity').value
+document.getElementById('navbar').innerHTML = navbar();
+
+document.getElementById('addFoodForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const title = document.getElementById('title').value;
+  const description = document.getElementById('description').value;
+  const price = parseFloat(document.getElementById('price').value);
+  const rating = parseFloat(document.getElementById('rating').value);
+  const category = document.getElementById('category').value;
+  const image = document.getElementById('image').value;
+  const deliveryTime = parseInt(document.getElementById('deliveryTime').value, 10);
+
+  const newFoodItem = {
+    title,
+    description,
+    price,
+    rating,
+    category,
+    image,
+    deliveryTime
   };
 
-  await addFood(food);
-  window.location.href = '/index.html';
+  try {
+    await addFoodItem(newFoodItem);
+    alert('Food item added successfully!');
+    document.getElementById('addFoodForm').reset();
+  } catch (error) {
+    console.error('Error adding food item:', error);
+    alert('Failed to add food item.');
+  }
 });
