@@ -1,0 +1,92 @@
+/* Additional CSS for food items */
+body {
+  padding:0% ;
+  margin:0%;
+}
+
+.navbar {
+  background-color: #343a40 !important;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+#searchForm {
+  margin-left: auto;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.food-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.food-item .food-details {
+  flex-grow: 1;
+}
+
+.food-item .food-details h5 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.food-item .food-details p {
+  margin: 0;
+}
+
+.food-item .food-details .food-price,
+.food-item .food-details .food-rating {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.food-item .food-actions {
+  display: flex;
+  align-items: center;
+}
+
+.food-item .food-actions .btn {
+  margin-left: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.cart-item img {
+  max-width: 100px;
+  margin-right: 1rem;
+}
+.cart-item-details {
+  flex-grow: 1;
+}
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+}
+.cart-item-actions button {
+  margin: 0 0.5rem;
+}
+.cart-total {
+  font-size: 1.5rem;
+  text-align: right;
+  margin-top: 1rem;
+}
