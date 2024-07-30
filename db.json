@@ -96,7 +96,60 @@
       "rating": 4.3,
       "image": "https://cdn.pixabay.com/photo/2015/09/18/17/47/vegan-946034_640.jpg",
       "city": "Mumbai"
+    },
+    {
+      "id": 1722352731121,
+      "name": "ishita",
+      "description": "nothing",
+      "price": 56,
+      "rating": 5,
+      "categories": "nothing",
+      "image": "https://cdn.pixabay.com/photo/2019/10/03/12/12/javascript-4523100_1280.jpg"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 8,
+      "name": "Falafel",
+      "description": "Crispy falafel with hummus and pita bread",
+      "categories": "Middle Eastern",
+      "price": 7.99,
+      "rating": 4.3,
+      "image": "https://cdn.pixabay.com/photo/2015/09/18/17/47/vegan-946034_640.jpg",
+      "city": "Mumbai",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "Sushi",
+      "description": "Authentic Japanese sushi rolls",
+      "categories": "Japanese",
+      "price": 15.99,
+      "rating": 4.8,
+      "image": "https://cdn.pixabay.com/photo/2023/07/07/17/47/sushi-8113165_1280.jpg",
+      "city": "Mumbai",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "name": "Salad",
+      "description": "Fresh garden salad with a variety of vegetables",
+      "categories": "Salad",
+      "price": 6.99,
+      "rating": 4,
+      "image": "https://cdn.pixabay.com/photo/2015/11/08/07/37/eat-1033210_640.jpg",
+      "city": "Delhi",
+      "quantity": 1
+    },
+    {
+      "id": 1722352731121,
+      "name": "ishita",
+      "description": "nothing",
+      "price": 56,
+      "rating": 5,
+      "categories": "nothing",
+      "image": "https://cdn.pixabay.com/photo/2019/10/03/12/12/javascript-4523100_1280.jpg",
+      "quantity": 1
+    }
+  ]
 }

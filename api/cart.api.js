@@ -1,1 +1,1 @@
-const cartAPI = "http://localhost:3000/cart";
+export const cartAPI = 'https://finaleexam2-deploy.onrender.com/cart';

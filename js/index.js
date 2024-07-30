@@ -1,4 +1,5 @@
-import { foodAPI } from '/api/food.api.js'; 
+import { foodAPI } from '/api/food.api.js';
+import { cartAPI } from '/api/cart.api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
@@ -22,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             let foodItems = await response.json();
 
-        
             localStorage.setItem('foodItems', JSON.stringify(foodItems));
 
             const searchValue = searchInput.value.toLowerCase();
@@ -73,44 +73,37 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFoodItems();
 });
 
-window.addToCart = function(foodId) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const foodItems = JSON.parse(localStorage.getItem('foodItems')) || []; // Ensure foodItems are available
-
+window.addToCart = async function(foodId) {
+    const foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
     const foodItem = foodItems.find(item => item.id === foodId);
     if (!foodItem) {
         alert('Food item not found!');
         return;
     }
 
+    const response = await fetch(cartAPI);
+    const cart = await response.json();
+
     const existingItem = cart.find(item => item.id === foodId);
 
     if (existingItem) {
         existingItem.quantity += 1;
+        await fetch(`${cartAPI}/${existingItem.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(existingItem)
+        });
     } else {
-        cart.push({ ...foodItem, quantity: 1 }); 
+        await fetch(cartAPI, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ...foodItem, quantity: 1 })
+        });
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart));
     alert('Item added to cart!');
 };
-
-
-const getCityName = async (lat, lng) => {
-    const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`
-    );
-    const data = await response.json();
-    return data.address.city;
-};
-
-const fetchUserLocation = () => {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-        const city = await getCityName(lat, lng);
-        console.log(city);
-    });
-};
-
-fetchUserLocation();
