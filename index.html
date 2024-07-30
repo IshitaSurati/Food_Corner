@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Corner</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Corner - Home</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <div id="navbar"></div>
-  <div id="userDisplay"></div>
-
-  <!-- Filters and Sorting Section -->
-  <div class="container mt-5">
-    <form class="form-inline my-2 my-lg-0" id="search-form">
-      <select id="categoryFilter" class="form-control mr-sm-2">
-        <option value="">All Categories</option>
-      </select>
-      <select id="sortBy" class="form-control mr-sm-2">
-        <option value="priceAsc">Price: Low to High</option>
-        <option value="priceDesc">Price: High to Low</option>
-        <option value="rating">Rating</option>
-        <option value="deliveryTimeAsc">Delivery Time: Short to Long</option>
-        <option value="deliveryTimeDesc">Delivery Time: Long to Short</option>
-      </select>
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchInput">
-      <input class="form-control mr-sm-2" type="text" placeholder="Enter your location" id="locationInput">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="button" id="searchButton">Search</button>
-    </form>
-  </div>
-
-  <!-- Food Container -->
-  <div id="foodContainer" class="container mt-5"></div>
-
-  <script src="js/index.js" type="module"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div id="navbar"></div>
+    <div class="container">
+        <h1 class="mt-4">Food Corner</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" id="search" class="form-control" placeholder="Search for food...">
+                <select id="filter" class="form-control mt-2">
+                    <option value="">All Categories</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Salad">Salad</option>
+                    <option value="Middle Eastern">Middle Eastern</option>
+                </select>
+                <select id="sort" class="form-control mt-2">
+                    <option value="price">Sort by Price</option>
+                    <option value="rating">Sort by Rating</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-4" id="food-items"></div>
+    </div>
+    <script type="module" src="/api/food.api.js"></script>
+    <script type="module" src="/js/index.js"></script>
 </body>
 </html>

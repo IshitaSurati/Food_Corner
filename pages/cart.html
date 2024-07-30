@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Food Corner</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div id="navbar"></div>
-  <div class="container mt-5">
-    <div id="cartContainer"></div>
-    <div id="totalPrice" class="mt-3"></div>
-    <button id="checkoutButton" class="btn btn-success mt-3">Checkout</button>
-  </div>
-
-  <script src="../js/cart.js" type="module"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div id="navbar"></div>
+    <div class="container">
+        <h1 class="mt-4">Cart</h1>
+        <div id="cart-items"></div>
+        <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+    </div>
+    <script src="/api/cart.api.js" type="module"></script>
+    <script src="/js/cart.js" type="module"></script>
 </body>
 </html>

@@ -1,17 +1,29 @@
-import { navbar } from '../components/navbar.js';
-import { loginUser } from '../api/user.api.js';
-document.getElementById('navbar').innerHTML=navbar();
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    fetch('/components/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            navbar.innerHTML = data;
+        });
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+    const loginForm = document.getElementById('login-form');
 
-  const user = await loginUser(email, password);
-  if (user) {
-    alert('Login successful!');
-    window.location.href = '/';
-  } else {
-    alert('Invalid email or password.');
-  }
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        const response = await fetch(`${usersAPI}?email=${email}&password=${password}`);
+        const users = await response.json();
+
+        if (users.length > 0) {
+            const user = users[0];
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('Login successful!');
+            window.location.href = '/index.html';
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    });
 });

@@ -1,201 +1,101 @@
 {
   "users": [
     {
-      "id": "b74a",
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "password123",
+      "phone": "123-456-7890",
+      "city": "surat"
+    },
+    {
+      "id": "a2ce",
       "name": "ishita",
-      "email": "ishita123@gmail.com",
+      "email": "ishitasurati@gmail.com",
       "password": "12345",
-      "phone": "1237456890",
-      "city": "delhi"
+      "userType": "user"
     }
   ],
   "food": [
     {
-      "id": "c7c3",
-      "title": "pizza",
-      "description": "Delicious cheesy pizza",
-      "price": 500,
-      "city": "delhi",
-      "image": "https://cdn.pixabay.com/photo/2022/03/29/03/40/food-7098703_1280.jpg",
-      "rating": 4.5,
-      "category": "Italian",
-      "deliveryTime": 30
-    },
-    {
-      "id": "0d54",
-      "title": "ice-cream",
-      "description": "Sundae, Raspberry cups, Vanilla ice-cream",
-      "price": 150,
-      "city": "delhi",
-      "image": "https://cdn.pixabay.com/photo/2013/07/26/07/56/ice-cream-sundae-167571_1280.jpg",
-      "rating": 4.0,
-      "category": "Dessert",
-      "deliveryTime": 20
-    },
-    {
-      "id": "43af",
-      "title": "French fries",
-      "description": "Fresh French fries",
-      "price": 150,
-      "city": "delhi",
-      "image": "https://cdn.pixabay.com/photo/2014/01/23/19/34/french-fries-250641_1280.jpg",
-      "rating": 4.2,
-      "category": "Snack",
-      "deliveryTime": 15
-    },
-    {
-      "id": "28e5",
-      "title": "Burger",
-      "description": "Veg Burger",
-      "price": 100,
-      "city": "mumbai",
-      "image": "https://cdn.pixabay.com/photo/2023/01/21/17/49/burger-7734821_1280.jpg",
-      "rating": 4.3,
-      "category": "Burger",
-      "deliveryTime": 25
-    },
-    {
-      "id": "4234",
-      "title": "Biriyani",
-      "description": "veg biriyani",
-      "price": 250,
-      "city": "mumbai",
-      "image": "https://cdn.pixabay.com/photo/2022/01/19/21/11/food-6950994_960_720.jpg",
-      "rating": 4.6,
-      "category": "Indian",
-      "deliveryTime": 40
-    },
-    {
-      "id": "1dc7",
-      "title": "Sandwich",
-      "description": "fully loaded veg Sandwich",
-      "price": 150,
-      "city": "delhi",
-      "image": "https://cdn.pixabay.com/photo/2017/05/10/17/27/sandwich-2301387_640.jpg",
-      "rating": 4.1,
-      "category": "Sandwich",
-      "deliveryTime": 20
-    },
-    {
-      "id": "650c",
-      "title": "Chicken Sandwich",
-      "description": "non. sandwich",
-      "price": 250,
-      "city": "mumbai",
-      "image": "https://cdn.pixabay.com/photo/2019/11/19/18/33/sandwich-4638226_1280.jpg",
-      "rating": 4.4,
-      "category": "Sandwich",
-      "deliveryTime": 30
-    },
-    {
-      "id": "878b",
-      "title": "coffee",
-      "description": "best coffee for hot coffee lovers",
-      "price": 60,
-      "city": "bangalore",
-      "image": "https://cdn.pixabay.com/photo/2015/05/07/13/46/cappuccino-756490_1280.jpg",
-      "rating": 4.7,
-      "category": "Beverage",
-      "deliveryTime": 10
-    },
-    {
       "id": 1,
-      "title": "Margherita Pizza",
-      "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
-      "price": 8.99,
-      "city": "delhi",
-      "category": "Pizza",
-      "image": "https://cdn.pixabay.com/photo/2017/08/10/06/23/pizza-2619013_1280.jpg",
-      "rating": 4.8,
-      "deliveryTime": 25
+      "name": "Pizza",
+      "description": "Delicious cheese pizza",
+      "categories": "Pizza",
+      "price": 12.99,
+      "rating": 5.4,
+      "image": "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_640.jpg",
+      "city": "Surat"
     },
     {
       "id": 2,
-      "title": "Chicken Tikka",
-      "description": "Spicy grilled chicken pieces marinated in yogurt and spices.",
-      "price": 10.99,
-      "city": "delhi",
-      "category": "Indian",
-      "image": "https://cdn.pixabay.com/photo/2020/03/18/07/19/dish-4943028_1280.jpg",
-      "rating": 4.6,
-      "deliveryTime": 35
+      "name": "Burger",
+      "description": "Juicy beef burger",
+      "categories": "Burger",
+      "price": 8.99,
+      "rating": 3.4,
+      "image": "https://cdn.pixabay.com/photo/2022/05/25/21/28/burger-7221436_640.jpg",
+      "city": "Mumbai"
     },
     {
       "id": 3,
-      "title": "Vegetable Sushi",
-      "description": "Sushi rolls with a variety of fresh vegetables.",
-      "price": 12.99,
-      "city": "delhi",
-      "category": "Japanese",
-      "image": "https://cdn.pixabay.com/photo/2017/03/02/20/53/sushi-2112350_960_720.jpg",
+      "name": "Pasta",
+      "description": "creamy pasta",
+      "categories": "Pasta",
+      "price": 5.99,
+      "rating": 4.4,
+      "image": "https://cdn.pixabay.com/photo/2015/04/08/13/13/pasta-712664_640.jpg",
+      "city": "Surat"
+    },
+    {
+      "id": 4,
+      "name": "Tacos",
+      "description": "Spicy Mexican tacos with fresh vegetables",
+      "categories": "Mexican",
+      "price": 10.99,
       "rating": 4.5,
-      "deliveryTime": 30
+      "image": "https://cdn.pixabay.com/photo/2022/11/28/20/05/taco-7623097_640.jpg",
+      "city": "Surat"
     },
     {
       "id": 5,
-      "title": "Pasta Carbonara",
-      "description": "Creamy pasta with pancetta, eggs, and Parmesan cheese.",
-      "price": 11.49,
-      "city": "delhi",
-      "category": "Pasta",
-      "image": "https://cdn.pixabay.com/photo/2015/04/08/13/13/pasta-712664_640.jpg",
-      "rating": 4.4,
-      "deliveryTime": 30
+      "name": "Sushi",
+      "description": "Authentic Japanese sushi rolls",
+      "categories": "Japanese",
+      "price": 15.99,
+      "rating": 4.8,
+      "image": "https://cdn.pixabay.com/photo/2023/07/07/17/47/sushi-8113165_1280.jpg",
+      "city": "Mumbai"
     },
     {
       "id": 6,
-      "title": "Caesar Salad",
-      "description": "Romaine lettuce with Caesar dressing, croutons, and Parmesan cheese.",
-      "price": 7.99,
-      "city": "delhi",
-      "category": "Salad",
-      "image": "https://cdn.pixabay.com/photo/2022/05/20/08/55/pasta-7209002_1280.jpg",
-      "rating": 4.2,
-      "deliveryTime": 15
+      "name": "Salad",
+      "description": "Fresh garden salad with a variety of vegetables",
+      "categories": "Salad",
+      "price": 6.99,
+      "rating": 4,
+      "image": "https://cdn.pixabay.com/photo/2015/11/08/07/37/eat-1033210_640.jpg",
+      "city": "Delhi"
+    },
+    {
+      "id": 7,
+      "name": "Ice Cream",
+      "description": "Creamy vanilla ice cream with chocolate sauce",
+      "categories": "Dessert",
+      "price": 3.99,
+      "rating": 4.9,
+      "image": "https://cdn.pixabay.com/photo/2023/11/29/09/39/ice-cream-8419129_640.jpg",
+      "city": "Surat"
     },
     {
       "id": 8,
-      "title": "Chocolate Cake",
-      "description": "Rich chocolate cake with a creamy chocolate frosting.",
-      "price": 5.99,
-      "city": "delhi",
-      "category": "Dessert",
-      "image": "https://cdn.pixabay.com/photo/2020/03/07/17/30/cake-4910417_1280.jpg",
-      "rating": 4.8,
-      "deliveryTime": 20
-    },
-    {
-      "id": 9,
-      "title": "Paneer Butter Masala",
-      "description": "Soft paneer cubes cooked in a creamy tomato-based gravy.",
-      "price": 11.99,
-      "city": "delhi",
-      "category": "Indian",
-      "image": "https://cdn.pixabay.com/photo/2022/03/02/12/42/paneer-7043098_1280.jpg",
-      "rating": 4.6,
-      "deliveryTime": 35
-    },
-    {
-      "id": 10,
-      "title": "Sushi Roll",
-      "description": "Delicious sushi rolls with a variety of fresh ingredients.",
-      "price": 14.99,
-      "city": "delhi",
-      "category": "Japanese",
-      "image": "https://cdn.pixabay.com/photo/2014/05/26/14/53/sushi-354628_640.jpg",
-      "rating": 4.5,
-      "deliveryTime": 30
-    },
-    {
-      "id": 11,
-      "title": "Falafel Wrap",
-      "description": "Crispy falafel balls wrapped in pita bread with veggies and tahini sauce.",
-      "price": 8.49,
-      "city": "delhi",
-      "category": "Middle Eastern",
-      "image": "https://cdn.pixabay.com/photo/2020/05/22/01/44/falafel-5203363_1280.jpg",
-      "rating": 4.4,
-      "deliveryTime": 25
+      "name": "Falafel",
+      "description": "Crispy falafel with hummus and pita bread",
+      "categories": "Middle Eastern",
+      "price": 7.99,
+      "rating": 4.3,
+      "image": "https://cdn.pixabay.com/photo/2015/09/18/17/47/vegan-946034_640.jpg",
+      "city": "Mumbai"
     }
   ],
   "cart": []

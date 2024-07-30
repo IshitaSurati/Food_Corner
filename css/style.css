@@ -1,52 +1,195 @@
+/* General Styles */
 body {
-  background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #343a40; /* Dark background color */
+  padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+  color: #e0e0e0;
+}
+
+.navbar .navbar-toggler {
+  border-color: #ffffff;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,...'); /* Default Bootstrap icon */
+  color: #ffffff;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #e0e0e0;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link {
+  color: #007bff; /* Highlight active link */
+  background-color: rgba(0, 123, 255, 0.1); /* Light background on active link */
+}
+
+.navbar .navbar-nav.ml-auto .nav-link {
+  margin-left: 1rem;
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 767.98px) {
+  .navbar .navbar-brand {
+      font-size: 1.25rem;
+  }
+
+  .navbar .navbar-nav {
+      text-align: center;
+  }
+
+  .navbar .navbar-nav .nav-item {
+      margin-bottom: 0.5rem;
+  }
+}
+
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Food Items Container */
+#foodItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .card {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
 .card-body {
-  padding: 15px;
+    padding: 1.25rem;
 }
 
-.form-inline {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.card-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.card-text {
+    margin-bottom: 0;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
 }
 
 .form-control {
-  margin: 5px;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
 }
 
-#foodContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-#search-input, #city-filter {
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
-.food-item {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.food-item img {
-  max-width: 100%;
-  height: auto;
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+    .container {
+        padding: 10px;
+    }
+    .navbar .navbar-nav {
+        margin-top: 0.5rem;
+    }
 }

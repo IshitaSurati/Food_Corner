@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Food Corner</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div id="navbar"></div>
-  <div class="container mt-5">
-    <form id="signupForm" class="form-group">
-      <input type="text" id="name" class="form-control mb-3" placeholder="Name" required>
-      <input type="email" id="email" class="form-control mb-3" placeholder="Email" required>
-      <input type="password" id="password" class="form-control mb-3" placeholder="Password" required>
-      <input type="tel" id="phone" class="form-control mb-3" placeholder="Phone Number" required>
-      <input type="text" id="city" class="form-control mb-3" placeholder="City" required>
-      <button type="submit" class="btn btn-primary">Signup</button>
-    </form>
-  </div>
-
-  <script src="../js/signup.js" type="module"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div id="navbar"></div>
+    <div class="container">
+        <h1 class="mt-4">Signup</h1>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Signup</button>
+        </form>
+    </div>
+    <script src="/api/users.api.js"></script>
+    <script src="/js/signup.js"></script>
 </body>
 </html>

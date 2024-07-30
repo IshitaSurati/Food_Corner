@@ -1,48 +1,42 @@
-import { navbar } from '../components/navbar.js';
-import { getCartItems, addCartItem, updateCartItem, removeCartItem, checkout } from '../api/cart.api.js';
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItemsContainer = document.getElementById('cart-items');
 
-document.getElementById('navbar').innerHTML = navbar();
+    const loadCartItems = () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
 
-const loadCart = async () => {
-  const cartItems = await getCartItems();
-  const cartContainer = document.getElementById('cartContainer');
-  const totalPrice = document.getElementById('totalPrice');
+        cartItemsContainer.innerHTML = '';
+        cart.forEach(cartItem => {
+            const foodItem = foodItems.find(item => item.id === cartItem.id) || {};
 
-  let total = 0;
-  cartContainer.innerHTML = cartItems.map(item => `
-    <div class="cart-item">
-      <h5>${item.title}</h5>
-      <p>Price: $${item.price}</p>
-      <input type="number" value="${item.quantity}" data-id="${item.id}" class="quantity-input">
-      <button data-id="${item.id}" class="remove-button">Remove</button>
-    </div>
-  `).join('');
+            const cartItemElement = document.createElement('div');
+            cartItemElement.className = 'card mb-4';
+            cartItemElement.innerHTML = `
+                <img src="${foodItem.image || 'default.jpg'}" class="card-img-top" alt="${foodItem.name || 'No Image'}">
+                <div class="card-body">
+                    <h5 class="card-title">${foodItem.name || 'Unknown Item'}</h5>
+                    <p class="card-text"><strong>Price:</strong> $${foodItem.price || '0.00'}</p>
+                    <p class="card-text"><strong>Quantity:</strong> ${cartItem.quantity || '0'}</p>
+                    <button class="btn btn-danger" onclick="removeFromCart(${foodItem.id})">Remove</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(cartItemElement);
+        });
+    };
 
-  document.querySelectorAll('.quantity-input').forEach(input => {
-    input.addEventListener('change', async (e) => {
-      const id = e.target.getAttribute('data-id');
-      const quantity = e.target.value;
-      await updateCartItem(id, quantity);
-      loadCart();
-    });
-  });
+    window.removeFromCart = (foodId) => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.id !== foodId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Item removed from cart!');
+        loadCartItems();
+    };
 
-  document.querySelectorAll('.remove-button').forEach(button => {
-    button.addEventListener('click', async (e) => {
-      const id = e.target.getAttribute('data-id');
-      await removeCartItem(id);
-      loadCart();
-    });
-  });
+    window.checkout = () => {
+        alert('Checkout successful!');
+        localStorage.removeItem('cart');
+        window.location.href = '/index.html';
+    };
 
-  total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  totalPrice.innerHTML = `Total Price: $${total}`;
-};
-
-document.getElementById('checkoutButton').addEventListener('click', async () => {
-  await checkout();
-  alert('Order placed successfully!');
-  loadCart();
+    loadCartItems();
 });
-
-loadCart();
